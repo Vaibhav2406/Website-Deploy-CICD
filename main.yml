@@ -3,10 +3,10 @@
   become: yes
   tasks:
    - name: Installing Puppet on Slave
-     shell: wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+     shell: wget https://apt.puppetlabs.com/puppet7-release-focal.deb
    - name: Adding to DPKG
-     shell: dpkg -i puppetlabs-release-pc1-xenial.deb
-   - name:
+     shell: dpkg -i puppet7-release-focal.deb
+   - name: Installing puppet
      apt:
       name: puppet-agent
       state: present
