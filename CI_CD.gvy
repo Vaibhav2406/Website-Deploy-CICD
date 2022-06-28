@@ -7,8 +7,8 @@ pipeline {
                     sh script: 'cd  $WORKSPACE'
 		    sh 'docker pull devopsedu/webapp'
 		    sh 'docker run -d -t -P devopsedu/webapp'
-		    sh 'read CONTAINERID'
-		    sh 'echo $CONTAINERID'
+		    sh 'echo read contid'
+		    sh 'echo $contid'
               }	
            }		
         }
