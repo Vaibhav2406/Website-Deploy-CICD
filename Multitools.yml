@@ -7,10 +7,8 @@
        update_cache: yes
        name: python3
        state: present
-   - name: Starting Puppet Service
-     shell: systemctl start python
-   - name: Checking Puppet Service
-     shell: systemctl status python      
+   - name: Checking Python Service
+     shell: python3 --version     
      register: consoleout
    - debug:
         var: consoleout.stdout_lines
@@ -26,8 +24,6 @@
       update_cache: yes
       name: git -y
       state: present
-   - name: Starting Git Service
-     shell: systemctl start git
    - name: Checking Git Version
      shell: get --version     
      register: consoleout
