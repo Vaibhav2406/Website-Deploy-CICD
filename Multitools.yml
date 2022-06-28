@@ -1,0 +1,16 @@
+- name: Play1
+  hosts: [Test]
+  become: yes
+  tasks:
+   - name: Installing python target
+      apt:
+       update_cache: yes
+       name: python3
+       state: present
+    - name: Starting Puppet Service
+      shell: systemctl start python
+    - name: Checking Puppet Service
+      shell: systemctl status python
+      register: consoleout
+    - debug
+        var: consoleout.stdout_lines
