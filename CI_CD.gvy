@@ -6,7 +6,7 @@ pipeline {
               withDockerRegistry(credentialsId: 'vaibhavgdevops', url: 'https://index.docker.io/v1/') {
                     sh script: 'cd  $WORKSPACE'
 		    sh 'docker pull devopsedu/webapp'
-		    sh 'docker run -d -t -P devopsedu/webapp /root'
+		    sh 'docker run -d -t -P devopsedu/webapp .'
 		    sh 'docker ps' 
               }	
            }		
