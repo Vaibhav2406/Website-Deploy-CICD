@@ -8,7 +8,7 @@ pipeline {
 		    sh 'docker pull devopsedu/webapp'
 		    sh 'var1=$(docker run -d -t -P devopsedu/webapp)'  
 		    sh 'wget https://github.com/mfieldhouse/docker-php-helloworld/archive/refs/heads/master.zip -P /tmp'
-		    sh 'docker cp -r /tmp/projCert-master/website var1:/var/www/html'
+		    sh 'docker cp /tmp/master.zip var1:/var/www/html'
               }	
            }		
         }
