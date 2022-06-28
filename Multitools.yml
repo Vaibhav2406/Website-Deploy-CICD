@@ -7,10 +7,30 @@
        update_cache: yes
        name: python3
        state: present
-    - name: Starting Puppet Service
-      shell: systemctl start python
-    - name: Checking Puppet Service
-      shell: systemctl status python
-      register: consoleout
-    - debug
+   - name: Starting Puppet Service
+     shell: systemctl start python
+   - name: Checking Puppet Service
+     shell: systemctl status python      
+     register: consoleout
+   - debug
         var: consoleout.stdout_lines
+   - name: Installing Git server
+      apt:
+       update_cache: yes
+       name: software-properties-common
+       state: present
+   - name: Updating repositories
+     shell: add-apt-repository ppa:git-core/ppa -y
+   - name: Updating cache
+     apt:
+      update_cache: yes
+      name: git -y
+      state: present
+   - name: Starting Git Service
+     shell: systemctl start git
+   - name: Checking Puppet Service
+     shell: get --version     
+     register: consoleout
+   - debug
+        var: consoleout.stdout_lines
+     
