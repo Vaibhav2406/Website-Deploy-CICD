@@ -7,7 +7,7 @@ pipeline {
                     sh script: 'cd  $WORKSPACE'
 		    sh 'docker pull devopsedu/webapp'
 		    sh 'docker run -d -t -P devopsedu/webapp' 
-		    sh 'docker ps -aqf "name=^containername$"'
+		    sh 'apt-get update'
               }	
            }		
         }
