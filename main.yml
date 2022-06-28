@@ -6,9 +6,9 @@
      shell: wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
    - name: Adding to DPKG
      shell: dpkg -i puppetlabs-release-pc1-xenial.deb
-   - name: Installing tool
+   - name:
      apt:
-      name: puppet-agent
+      name: puppetlabs-release-pc1-xenial.deb
       state: present
    - name: starting Puppet service
      shell: systemctl start Puppet
@@ -17,3 +17,4 @@
      register: consoleout
    - debug:
        var: consoleout.stdout_lines
+
