@@ -8,7 +8,7 @@
        name: python3
        state: present
    - name: Checking Python Service
-     shell: python3 --version     
+     shell: python3 --version
      register: consoleout
    - debug:
         var: consoleout.stdout_lines
@@ -22,11 +22,10 @@
    - name: Updating cache
      apt:
       update_cache: yes
-      name: git -y
+      name: git
       state: present
    - name: Checking Git Version
-     shell: get --version     
+     shell: git --version
      register: consoleout
    - debug:
         var: consoleout.stdout_lines
-     
