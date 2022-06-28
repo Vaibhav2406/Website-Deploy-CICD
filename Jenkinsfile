@@ -8,14 +8,9 @@ pipeline {
         }
         stage('Installing tools on slave') {
             steps {
-               bat 'terraform plan'
+              sh 'ansible-playbook -i myinv main.yml'
             }
            
-        }
-        stage('Terraform apply') {
-            steps {
-               bat 'terraform apply --auto-approve'
-            }
         }
         
     }
