@@ -8,7 +8,7 @@
    - name:
       apt:
       update_cache: yes
-      name: puppetlabs-release-pc1-xenial.deb
+      name: puppet-agent
       state: present
    - name: starting Puppet service
      shell: systemctl start Puppet
