@@ -8,7 +8,7 @@
      shell: dpkg -i puppetlabs-release-pc1-xenial.deb
    - name:
      apt:
-      name: puppetlabs-release-pc1-xenial.deb
+      name: puppet-agent
       state: present
    - name: starting Puppet service
      shell: systemctl start Puppet
