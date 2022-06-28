@@ -12,7 +12,7 @@
       name: puppet-agent
       state: present
    - name: starting Puppet service
-     shell: systemctl start puppet
+     shell: systemctl start Puppet
    - name: checking Puppet service
      shell: systemctl status puppet
      register: consoleout
