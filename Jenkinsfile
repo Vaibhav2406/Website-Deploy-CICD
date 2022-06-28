@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Installing tools on slave') {
             steps {
-              sh 'ansible-playbook -i myinv main.yml'
+              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'myinv', playbook: 'main.yml'
             }
            
         }
