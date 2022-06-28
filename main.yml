@@ -1,0 +1,19 @@
+- hosts: Test
+  become: yes
+  tasks:
+   - name: Installing Puppet on Slave
+     shell: wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+   - name: Adding to DPKG
+     shell: dpkg -i puppetlabs-release-pc1-xenial.deb
+   - name:
+      apt:
+      update_cache: yes
+      name: puppetlabs-release-pc1-xenial.deb
+      state: present
+   - name: starting Puppet service
+     shell: systemctl start Puppet
+   - name: checking Puppet service
+     shell: systemctl status Puppet
+     register: consoleout
+   - debug: 
+       var: consoleout.stdout_lines
