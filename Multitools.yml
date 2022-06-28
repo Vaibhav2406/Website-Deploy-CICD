@@ -12,7 +12,7 @@
    - name: Checking Puppet Service
      shell: systemctl status python      
      register: consoleout
-   - debug
+   - debug:
         var: consoleout.stdout_lines
    - name: Installing Git server
      apt:
@@ -31,6 +31,6 @@
    - name: Checking Git Version
      shell: get --version     
      register: consoleout
-   - debug
+   - debug:
         var: consoleout.stdout_lines
      
