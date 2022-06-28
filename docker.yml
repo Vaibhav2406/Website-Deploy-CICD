@@ -11,9 +11,9 @@
    - name: Updating repositories
      apt:
       update_cache: yes
-   - name: starting Puppet service
+   - name: starting Docker service
      shell: systemctl start docker
-   - name: checking Puppet service
+   - name: checking Docker service
      shell: systemctl status docker
      register: consoleout
    - debug:
