@@ -8,6 +8,7 @@
      shell: dpkg -i puppet7-release-focal.deb
    - name: Installing puppet
      apt:
+      update_cache: yes
       name: puppet-agent
       state: present
    - name: starting Puppet service
