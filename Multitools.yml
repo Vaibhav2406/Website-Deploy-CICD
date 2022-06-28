@@ -3,7 +3,7 @@
   become: yes
   tasks:
    - name: Installing python target
-      apt:
+     apt:
        update_cache: yes
        name: python3
        state: present
@@ -15,7 +15,7 @@
    - debug
         var: consoleout.stdout_lines
    - name: Installing Git server
-      apt:
+     apt:
        update_cache: yes
        name: software-properties-common
        state: present
