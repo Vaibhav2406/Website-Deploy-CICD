@@ -1,3 +1,2 @@
-FROM devopsedu/webapp
-RUN docker run -d -P devopsedu/webapp
-RUN docker pull tomcat:latest
+FROM tomcat:8.5.40
+RUN docker run -d -P
