@@ -16,13 +16,13 @@ pipeline {
         }
      }	
 	post {
-          failure { 
-              script {
-                {   
-		echo "Running remove job"
+         failure { 
+          script {
+                if(JobResultBlockQueueCondition['build & push docker image'] == 'FAILURE') {
+                    echo "Running another job"
                     build job: 'Remove-Container', propagate: true
               }
            }
-        }
-     }
-  
+       } 
+   }
+}  
