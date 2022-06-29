@@ -18,8 +18,8 @@ pipeline {
 	post {
           failure { 
               script {
-                if(jobResults['Deploy-Tomcat-Docker'] == 'FAILURE') {
-                    echo "Running remove job"
+                {   
+		echo "Running remove job"
                     build job: 'Remove-Container', propagate: true
               }
            }
