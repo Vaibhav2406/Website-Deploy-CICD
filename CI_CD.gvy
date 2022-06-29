@@ -9,6 +9,7 @@ pipeline {
 		    sh 'docker build --file dockerfile --tag vaibhavgdevops/dockertest:$BUILD_NUMBER .'
 		    sh 'docker run -d -t -P vaibhavgdevops/dockertest:$BUILD_NUMBER'
 		    sh 'docker push vaibhavgdevops/dockertest:$BUILD_NUMBER'
+		    sh 'git push'
 	            sh 'docker ps'
 	      }	
            }		
