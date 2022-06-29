@@ -11,8 +11,6 @@
    - name: Updating repositories
      apt:
       update_cache: yes
-   - name: starting Docker service
-     shell: systemctl start docker
    - name: checking Docker service
      shell: systemctl status docker
      register: consoleout
