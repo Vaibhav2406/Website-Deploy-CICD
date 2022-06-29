@@ -6,11 +6,10 @@ pipeline {
 	         steps {
               withDockerRegistry(credentialsId: 'vaibhavgdevops', url: 'https://index.docker.io/v1/') {
                     sh script: 'cd  $WORKSPACE'
-		    sh 'docker pull devopsedu/webapp'
-		    sh 'docker run -d -t -P devopsedu/webapp'
-		    sh 'echo read contid'
-		    sh 'echo $contid'
-              }	
+		    sh 'docker build --file dockerfile --tag devopsedu/webapp:v2'
+		    sh 'docker run -d -t -P devopsedu/webapp:v2'
+		    sh 'docker ps'
+	      }	
            }		
         }
     }
