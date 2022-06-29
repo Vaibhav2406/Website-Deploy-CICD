@@ -19,6 +19,7 @@ pipeline {
          failure { 
           script {
                 sh 'docker kill $(docker ps -l -q)'
+		sh 'exit /b /0'
            }
        } 
    }
