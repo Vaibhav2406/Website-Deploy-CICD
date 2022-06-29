@@ -14,5 +14,12 @@ pipeline {
 	      }	
            }		
         }
+	post{
+          failure { 
+              script {
+                if(jobResults['Deploy-Docker-Tomcat'] == 'FAILURE') {
+                    echo "Running remove job"
+                    build job: 'Remove-Container', propagate: true
+                }
     }
 }
