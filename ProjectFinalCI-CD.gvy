@@ -29,13 +29,13 @@ pipeline {
 	            sh 'docker ps'
 	           }	
               }		
-        } 
+        }
+    }	    
        post {
          failure { 
            script {
                 sh 'docker kill $(docker ps -l -q)'
            }
-        } 
-      }
+         } 
+       }
     }
-
