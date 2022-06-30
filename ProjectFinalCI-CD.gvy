@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploying Docker on Slave') {
             steps {
-              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'myinv', playbook: 'docker.yml'
+              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'myinv', playbook: 'dockerm.yml'
             }
            
         }
