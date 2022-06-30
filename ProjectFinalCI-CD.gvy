@@ -28,14 +28,15 @@ pipeline {
 		    sh 'docker push vaibhavgdevops/dockertest:$BUILD_NUMBER'
 	            sh 'docker ps'
 	           }	
-           }		
+              }		
         } 
-	     post {
+       post {
          failure { 
-          script {
+           script {
                 sh 'docker kill $(docker ps -l -q)'
            }
         } 
       }
     }
+  }
 }
