@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent target
     stages {
       stage('Checking all running containers') {
         steps {
