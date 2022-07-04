@@ -1,6 +1,8 @@
 pipeline {
-    agent target
-    stages {
+    agent {
+     'target'
+         }
+   stages {
       stage('Checking all running containers') {
         steps {
               sh 'docker ps -al'
