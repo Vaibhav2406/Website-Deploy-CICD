@@ -9,7 +9,7 @@ pipeline {
        stage('Removing all running container') {
 	         steps {
 	      sh 'docker stop $(docker ps -a -q)'
-              sh 'docker kill $(docker ps -l -q)'
+              sh 'docker rm --force $(docker ps -a -q)'
            }
        }
        stage('Removing container') {
