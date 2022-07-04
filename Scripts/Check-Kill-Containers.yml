@@ -3,17 +3,17 @@ pipeline {
     stages {
       stage('Checking all running containers') {
         steps {
-              sh 'docker ps -al'
+              sh 'docker ps'
            }
        }
        stage('Removing all running container') {
 	         steps {
-              sh 'docker system prune --all --force'
+              sh 'docker kill $(docker ps -l -q)'
            }
        }
        stage('Removing container') {
 	         steps {
-              sh 'docker ps -al'
+              sh 'docker ps '
            }
        }
     }
