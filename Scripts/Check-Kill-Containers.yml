@@ -8,7 +8,7 @@ pipeline {
        }
        stage('Removing all running container') {
 	         steps {
-              sh 'docker kill $(docker ps -l -q)'
+              sh 'docker kill $(docker ps -a -q)'
            }
        }
        stage('Removing container') {
