@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Installing tools on slave') {
             steps {
-              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'myinv', playbook: 'edu-project1/main/Puppet-Push/main.yml'
+              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'myinv', playbook: 'Puppet-Push/main.yml'
             }
            
         }
