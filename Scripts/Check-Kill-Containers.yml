@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage('Checking all running containers') {
         steps {
-              sh 'docker ps'
+              sh 'docker ps -al'
            }
        }
        stage('Removing all running container') {
