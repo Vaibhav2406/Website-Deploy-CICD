@@ -1,1 +1,20 @@
-
+- name: Play1
+  hosts: Test
+  become: yes
+  tasks:
+   - name: Installing Puppet on Slave
+     shell: wget https://apt.puppetlabs.com/puppet7-release-focal.deb
+   - name: Adding to DPKG
+     shell: dpkg -i puppet7-release-focal.deb
+   - name: Installing puppet
+     apt:
+      update_cache: yes
+      name: puppet-agent
+      state: present
+   - name: starting Puppet service
+     shell: systemctl start puppet
+   - name: checking Puppet service
+     shell: systemctl status puppet
+     register: consoleout
+   - debug:
+       var: consoleout.stdout_lines
