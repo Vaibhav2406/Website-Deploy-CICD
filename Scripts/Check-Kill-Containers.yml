@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+      stage('Checking all running containers') {
+	         steps {
+              sh 'docker ps -al'
+           }
+       }
+       stage('Removing all running container') {
+	         steps {
+              sh 'docker system prune --all --force'
+           }
+       }
+       stage('Removing container') {
+	         steps {
+              sh 'docker ps -al'
+           }
+       }
+    }
+}
