@@ -12,7 +12,7 @@ pipeline {
               sh 'docker rm --force $(docker ps -a -q)'
            }
        }
-       stage('Removing container') {
+       stage('Rechecking running containers') {
 	         steps {
               sh 'docker ps '
            }
