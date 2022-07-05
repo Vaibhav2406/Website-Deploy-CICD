@@ -1,2 +1,2 @@
 [Test]
-192.168.29.143  ansible_user=Vaibhav ansible_ssh_pass=Gupta@
+Slave-VirtualBox ansible_user=$username ansible_ssh_pass=$passwd
