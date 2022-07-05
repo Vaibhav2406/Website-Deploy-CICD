@@ -1,24 +1,24 @@
-	pipeline {
-	    agent {
-	    node('target') 
-	    }
-	    stages {
-	      stage('Checking all running containers') {
-		steps {
-		      sh 'docker ps -al'
-		   }
-	       }
-	       stage('Removing all running container') {
-		 steps {
-		      sh 'docker stop $(docker ps -a -q)'
-		      sh 'docker rm --force $(docker ps -a -q)'
-		   }
-	       }
-	       stage('Rechecking running containers') {
-		 steps {
-		      sh 'docker ps '
-		   }
-	       }
-	    }
-	}    
+pipeline {
+  agent {
+    node('target') 
+	 }
+    stages {
+      stage('Checking all running containers') {
+       steps {
+        sh 'docker ps -al'
+             }
+	   }
+      stage('Removing all running container') {
+       steps {
+        sh 'docker stop $(docker ps -a -q)'
+        sh 'docker rm --force $(docker ps -a -q)'
+	     }
+	   }
+      stage('Rechecking running containers') {
+       steps {
+        sh 'docker ps '
+         }
+       }
+    }
+ }    
 	
