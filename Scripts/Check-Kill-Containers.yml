@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node('target') 
-	 }
+        }
     stages {
       stage('Checking all running containers') {
        steps {
@@ -21,4 +21,3 @@ pipeline {
        }
     }
  }    
-	
