@@ -1,2 +1,2 @@
 [Test]
-192.168.29.97 ansible_user=vaibhav ansible_ssh_pass=Gupta@
+192.168.29.97 ansible_user=devops ansible_ssh_pass=today@1234
