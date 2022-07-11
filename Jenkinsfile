@@ -1,10 +1,7 @@
 pipeline {
     agent {
     node('target') 
-    }
-   options {
-        ansiColor('xterm')
-        }
+     }
     stages {
         stage('Git Checkout') {
             steps {
