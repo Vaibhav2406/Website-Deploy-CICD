@@ -11,10 +11,3 @@
       update_cache: yes
       name: puppet-agent
       state: present
-   - name: starting Puppet service
-     shell: systemctl start puppet
-   - name: checking Puppet service
-     shell: systemctl status puppet
-     register: consoleout
-   - debug:
-       var: consoleout.stdout_lines
