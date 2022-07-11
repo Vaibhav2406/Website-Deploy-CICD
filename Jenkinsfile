@@ -11,13 +11,13 @@ pipeline {
         }
         stage('Installing tools on slave') {
             steps {
-              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Docker-Installation/myinv', playbook: 'Puppet-Push/main.yml'
+              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Inv', playbook: 'Puppet-Push/main.yml'
             }
            
         }
         stage('Deploying Docker on Slave') {
             steps {
-              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Docker-Installation/myinv', playbook: 'Docker-Installation/dockerm.yml'
+              ansiblePlaybook credentialsId: 'Mastercreds', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Inv', playbook: 'Docker-Installation/dockerm.yml'
             }
            
         }
