@@ -3,9 +3,9 @@
   become: yes
   tasks:
    - name: Installing Docker on Slave
-     shell: wget https://raw.githubusercontent.com/Vaibhav2406/Website-Deploy-CICD/main/Docker-Installation/Dockerinstall.sh -P /tmp
-     shell: chmod 755 /tmp/Dockerinstall.sh
-     shell: bash /tmp/Dockerinstall.sh
+     shell: wget https://raw.githubusercontent.com/lerndevops/labs/master/scripts/installDocker.sh -P /tmp
+     shell: chmod 755 /tmp/installDocker.sh
+     shell: bash /tmp/installDocker.sh
    - name: Updating repositories
      apt:
       update_cache: yes
