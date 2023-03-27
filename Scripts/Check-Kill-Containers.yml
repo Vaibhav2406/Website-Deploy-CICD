@@ -3,7 +3,7 @@ pipeline {
     node('master') 
         }
     stages {
-      stage('Checking all running containers') {
+      stage('Checking all the running containers') {
        steps {
         sh 'docker ps -al'
              }
